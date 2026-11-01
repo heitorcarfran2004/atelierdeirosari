@@ -486,6 +486,14 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
  var indoParaCheckout=false;
  if(CHECKOUT)document.querySelectorAll('a.checkout').forEach(function(a){a.href=comQ(CHECKOUT);a.addEventListener('click',function(){indoParaCheckout=true})});
 
+ /* ---- Botoes ancora: rolam ate a secao sem colocar # na URL (descontam a faixa fixa do topo) ---- */
+ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){
+  var alvo=document.getElementById(a.getAttribute('href').slice(1));if(!alvo)return;
+  e.preventDefault();
+  var faixa=document.querySelector('.cuenta'),h=faixa?faixa.offsetHeight:0;
+  window.scrollTo({top:alvo.getBoundingClientRect().top+window.pageYOffset-h,behavior:'smooth'});
+ })});
+
  /* ---- Back redirect: quem tenta voltar vai para a oferta de saida; quem clicou para comprar nao e desviado ---- */
  if(BACK){
   history.pushState({},'',location.href);history.pushState({},'',location.href);history.pushState({},'',location.href);
