@@ -469,14 +469,25 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <script>
 (function(){
  /* ---- Precos e checkout: tudo aqui. Valores provisorios, a definir. ---- */
- var CHECKOUT = '';  /* link do checkout; vazio = botao rola ate a oferta */
+ var CHECKOUT = 'https://pay.hotmart.com/E108285930F?off=re6ktr4k&checkoutMode=10';  /* link do checkout; vazio = botao rola ate a oferta */
+ var BACK = 'https://pay.hotmart.com/E108285930F?off=iqmdd5bz&checkoutMode=10';  /* back redirect: oferta de R$ 5,90 para quem tenta voltar */
  var T = {p:27.90, tachado:97, b:[37,27,27,27,17,27,27,27,37,17]};
  function f(n){return 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})}
  var bon=T.b.reduce(function(a,c){return a+c},0);
  var v={preco:f(T.p),tachado:f(T.tachado),ahorro:f(Math.round((T.tachado-T.p)*100)/100),bonus:f(bon)};
  T.b.forEach(function(x,i){v['b'+(i+1)]=f(x)});
  document.querySelectorAll('[data-v]').forEach(function(el){var k=el.getAttribute('data-v');if(v[k])el.textContent=v[k]});
- if(CHECKOUT)document.querySelectorAll('a.checkout').forEach(function(a){a.href=CHECKOUT});
+ /* leva as UTMs da campanha ate o checkout */
+ var q=location.search.replace(/^\?/,'');
+ function comQ(u){return q?u+(u.indexOf('?')>=0?'&':'?')+q:u}
+ var indoParaCheckout=false;
+ if(CHECKOUT)document.querySelectorAll('a.checkout').forEach(function(a){a.href=comQ(CHECKOUT);a.addEventListener('click',function(){indoParaCheckout=true})});
+
+ /* ---- Back redirect: quem tenta voltar vai para a oferta de saida; quem clicou para comprar nao e desviado ---- */
+ if(BACK){
+  history.pushState({},'',location.href);history.pushState({},'',location.href);history.pushState({},'',location.href);
+  window.addEventListener('popstate',function(){if(!indoParaCheckout)setTimeout(function(){location.href=comQ(BACK)},1)});
+ }
 
  /* ---- Contagem regressiva de 12 horas: comeca na primeira visita e, ao zerar, recomeca ---- */
  var KEY='adt_fim', DUR=12*3600*1000, fim;
