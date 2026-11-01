@@ -1,13 +1,18 @@
 <!doctype html>
-<!-- Pagina de vendas do Atelie do Terco (pt-BR). Paginas, capa e bonus em img/ sao do nosso manual (italiano).
+<!-- Pagina de vendas de L'Atelier del Rosario, em ITALIANO para a Italia, precos em euro. Paginas, capa e bonus em img/ sao do nosso manual.
      Ainda de terceiros: as fotos lume-*.jpg do carrossel de modelos. -->
-<html lang="pt-BR">
+<html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="https://cashflow.mentoriaprocesso.com/t/p.js?w=8bf6383c-9940-4837-a9d9-6e3cc6dcce06&o=464c5e61-9539-44da-b224-144a3f311985" data-offer="464c5e61-9539-44da-b224-144a3f311985" data-nowprocket data-no-minify="1" data-no-optimize="1" data-cfasync="false" async></script>
-<title>O Ateliê do Terço · +100 modelos de terços passo a passo</title>
-<meta name="description" content="Faça seu primeiro terço artesanal em uma única tarde e comece a vender ainda esta semana. +100 modelos passo a passo + 11 bônus.">
+<title>L'Atelier del Rosario · +100 modelli di rosari passo passo</title>
+<meta name="description" content="Fai il tuo primo rosario artigianale in un pomeriggio e inizia a venderlo già questa settimana. +100 modelli passo passo + 11 bonus.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="L'Atelier del Rosario · +100 modelli di rosari passo passo">
+<meta property="og:description" content="Fai il tuo primo rosario artigianale in un pomeriggio. +100 modelli passo passo, 11 bonus e 4 videolezioni.">
+<meta property="og:image" content="img/hero-final.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-final.webp" fetchpriority="high">
@@ -190,6 +195,9 @@ section{padding:40px 0}
 .alt{background:#fff}
 /* barra do topo */
 .cuenta{background:#8C3A5C;font-size:14px;letter-spacing:.02em}
+/* faixa da contagem FIXA no topo (o sticky falha no celular com o overflow-x do body); o espacador guarda o lugar dela */
+.cuenta{position:fixed;top:0;left:0;right:0;z-index:1000}
+.cuenta-esp{height:42px}
 .cuenta .reloj span{color:#8C3A5C;border-radius:6px}
 /* abertura */
 .hero{background:radial-gradient(circle at 85% 8%,rgba(217,169,63,.32),transparent 50%),radial-gradient(circle at 5% 95%,rgba(140,58,92,.14),transparent 50%),linear-gradient(170deg,#FFF6EA,#F3DCCB);padding:22px 0 40px}
@@ -268,20 +276,21 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 </head>
 <body>
 
-<div class="cuenta" id="cuenta"><span id="ctxt">⚠️ Oferta especial termina em</span><span class="reloj" id="reloj"><span id="hh">12</span>:<span id="mm">00</span>:<span id="ss">00</span></span></div>
+<div class="cuenta-esp" id="cuentaEsp" aria-hidden="true"></div>
+<div class="cuenta" id="cuenta"><span id="ctxt">⚠️ L'offerta speciale scade tra</span><span class="reloj" id="reloj"><span id="hh">12</span>:<span id="mm">00</span>:<span id="ss">00</span></span></div>
 
 <!-- 1. PROMESSA -->
 <header class="hero">
  <div class="wrap">
-  <h1 class="titulo"><span class="linha verm">+100 MODELOS</span><span class="linha verm">DE TERÇOS ARTESANAIS</span><span class="linha">PARA VOCÊ APRENDER</span><span class="linha">A FAZER DO ZERO</span><span class="linha bonus-txt">+ Bônus</span></h1>
-  <p class="sub2">Com <b>+100 modelos de terços artesanais</b>, você aprende a transformar essa habilidade em uma <b>fonte de renda trabalhando de casa</b>.</p>
-  <img width="880" height="880" fetchpriority="high" decoding="async" class="heroimg" src="img/hero-final.webp" alt="Manual L'Atelier del Rosario com mais de 100 modelos de terços artesanais">
-  <div class="cta cta-hero"><a class="btn" href="#oferta">Quero o guia completo →</a></div>
+  <h1 class="titulo"><span class="linha verm">+100 MODELLI</span><span class="linha verm">DI ROSARI ARTIGIANALI</span><span class="linha">PER IMPARARE A FARLI</span><span class="linha">PARTENDO DA ZERO</span><span class="linha bonus-txt">+ Bonus</span></h1>
+  <p class="sub2">Con <b>+100 modelli di rosari artigianali</b> impari a trasformare questa passione in un <b>guadagno extra lavorando da casa</b>.</p>
+  <img width="880" height="880" fetchpriority="high" decoding="async" class="heroimg" src="img/hero-final.webp" alt="Il manuale L'Atelier del Rosario con oltre 100 modelli di rosari fatti a mano">
+  <div class="cta cta-hero"><a class="btn" href="#oferta">Voglio il manuale completo →</a></div>
   <div class="sellohero">
-   <div><i>🛡️</i><b>Garantia</b>7 dias</div>
-   <div><i>📲</i><b>100% digital</b>Sem frete</div>
-   <div><i>📩</i><b>Entrega imediata</b></div>
-   <div><i>🔒</i><b>Pagamento seguro</b></div>
+   <div><i>🛡️</i><b>Garanzia</b>7 giorni</div>
+   <div><i>📲</i><b>100% digitale</b>Niente spedizione</div>
+   <div><i>📩</i><b>Accesso immediato</b></div>
+   <div><i>🔒</i><b>Pagamento sicuro</b></div>
   </div>
  </div>
 </header>
@@ -289,8 +298,8 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <!-- 3b. POR DENTRO -->
 <section class="alt">
  <div class="wrap">
-  <h2>Assim é o guia <em>por dentro</em></h2>
-  <p class="lead">Cada modelo em 2 páginas: a foto, os materiais exatos, o desenho das contas e o passo a passo com fotos.</p>
+  <h2>Ecco il manuale <em>dall'interno</em></h2>
+  <p class="lead">Ogni modello in 2 pagine: la foto, i materiali esatti, il cammino del rosario disegnato grano per grano e il montaggio passo passo con le foto.</p>
  </div>
  <div class="marq paginas" aria-hidden="true"><div class="pista" id="pista2"><img width="500" height="706" decoding="async" src="img/guia-113.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-121.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-131.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-141.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-147.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-149.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-151.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-153.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-155.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-157.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-159.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-161.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-163.webp" alt=""><img width="500" height="706" decoding="async" src="img/guia-167.webp" alt=""></div></div>
 </section>
@@ -298,43 +307,43 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <!-- 3c. PRA QUEM E (estilo Lume) -->
 <section class="lume">
  <div class="wrap">
-  <p class="eyebrow">Pra quem é esse curso</p>
-  <h2>Você se identifica?</h2>
+  <p class="eyebrow">Per chi è questo manuale</p>
+  <h2>Ti riconosci?</h2>
   <div class="pains">
-   <div class="pain rev">Ama terços e queria aprender a fazer os seus, com acabamento de verdade.</div>
-   <div class="pain rev">Já viu terços lindos à venda e pensou: "eu também consigo fazer isso".</div>
-   <div class="pain rev">Quer presentear quem você ama com uma peça feita pelas suas mãos.</div>
-   <div class="pain rev">Queria ter um dinheiro seu, trabalhando em casa, no seu horário.</div>
-   <div class="pain rev">Já tentou aprender pelo YouTube e só encontrou os mesmos modelos de sempre.</div>
-   <div class="pain rev">Nunca montou um terço e acha que é difícil demais pra você.</div>
+   <div class="pain rev">Ami i rosari e vorresti imparare a fare i tuoi, rifiniti come si deve.</div>
+   <div class="pain rev">Hai visto rosari bellissimi in vendita e hai pensato: «Potrei farlo anch'io».</div>
+   <div class="pain rev">Vuoi regalare a chi ami qualcosa fatto con le tue mani.</div>
+   <div class="pain rev">Ti piacerebbe avere un'entrata tutta tua, lavorando da casa, con i tuoi tempi.</div>
+   <div class="pain rev">Hai provato a imparare su YouTube e hai trovato sempre gli stessi modelli.</div>
+   <div class="pain rev">Non hai mai fatto un rosario e pensi che sia troppo difficile per te.</div>
   </div>
-  <p class="turn">🙏 E tem um detalhe: <b>terço é presente o ano inteiro.</b> Batizado, primeira comunhão, crisma, casamento, lembrancinha. Sempre tem alguém procurando uma peça especial, feita com carinho.</p>
+  <p class="turn">🙏 E c'è un dettaglio: <b>il rosario si regala tutto l'anno.</b> Battesimo, Prima Comunione, Cresima, matrimonio, bomboniere. C'è sempre qualcuno che cerca un pezzo speciale, fatto con amore.</p>
  </div>
 </section>
 
 <!-- 3. CARROSSEL -->
 <section class="alt">
  <div class="wrap">
-  <h2>Veja o que <em>você vai fazer com as suas mãos</em></h2>
-  <p class="lead">Com o guia você vai poder fazer terços marianos, de sacramentos, dezenas, terços de pulso e das devoções mais queridas do Brasil.</p>
+  <h2>Guarda cosa <em>farai con le tue mani</em></h2>
+  <p class="lead">Con il manuale potrai fare rosari mariani, rosari per i sacramenti, decine, bracciali-rosario e i rosari dei santi più amati, da Sant'Antonio a Santa Rita.</p>
  </div>
  <div class="marq" aria-hidden="true"><div class="pista" id="pista">
   <img width="300" height="450" decoding="async" src="img/lume-v08.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v12.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-vx-santa.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v06.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v10.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v17.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v14.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v09.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v04.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v13.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v07.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v15.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v05.jpg" alt=""><img width="300" height="450" decoding="async" src="img/lume-v11.jpg" alt="">
  </div></div>
- <div class="cta wrap"><a class="btn" href="#oferta">Quero começar agora! →</a></div>
+ <div class="cta wrap"><a class="btn" href="#oferta">Voglio iniziare adesso! →</a></div>
 </section>
 
 <!-- 4. O QUE VOCE VAI RECEBER -->
 <section class="pegada-abajo">
  <div class="wrap">
-  <h2>Tudo o que <em>você vai receber</em></h2>
-  <p class="lead">Você começa pelo guia principal, <b>O Ateliê do Terço</b>: todo colorido, em PDF.</p>
+  <h2>Tutto quello <em>che riceverai</em></h2>
+  <p class="lead">Si parte dal manuale principale, <b>L'Atelier del Rosario</b>: tutto a colori, in PDF e nella tua area riservata.</p>
   <ul class="recebe">
-   <li class="rev"><i>📿</i><span><b>+100 modelos</b> de terços para escolher</span></li>
-   <li class="rev"><i>📱</i><span><b>Conteúdo em PDF</b> e Aplicativo</span></li>
-   <li class="rev"><i>📖</i><span><b>Apostila ilustrada</b> com a montagem de cada modelo</span></li>
-   <li class="rev"><i>🛒</i><span><b>Lista de materiais</b> e onde comprar</span></li>
-   <li class="rev"><i>⭐</i><span><b>Modelos exclusivos</b> do iniciante ao avançado</span></li>
+   <li class="rev"><i>📿</i><span><b>+100 modelli</b> di rosari tra cui scegliere</span></li>
+   <li class="rev"><i>📱</i><span><b>Manuale in PDF</b> e app da aprire sul telefono</span></li>
+   <li class="rev"><i>📖</i><span><b>Montaggio illustrato</b> passo passo per ogni modello</span></li>
+   <li class="rev"><i>🛒</i><span><b>Lista dei materiali</b> con le quantità esatte</span></li>
+   <li class="rev"><i>⭐</i><span><b>Modelli esclusivi</b>, da principiante a esperta</span></li>
   </ul>
  </div>
 </section>
@@ -343,21 +352,21 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <section class="pegada-arriba">
  <div class="wrap">
   <div class="puente"><span>+</span></div>
-  <h2>E ainda, <em>11 bônus de presente</em></h2>
-  <p class="lead">O guia te ensina a fazer. Os bônus te ajudam com todo o resto: <b>quanto cobrar, quando, para quem e como apresentar</b>. Só comprando hoje:</p>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus01.webp" alt=""><div><h3>1 · Guia para vender + roteiros</h3><p>Onde vender e mensagens prontas para a sua paróquia, a catequese, o WhatsApp e o Instagram.</p><div class="val">De <s data-v="b1"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus02.webp" alt=""><div><h3>2 · Preços + Calculadora</h3><p>Quanto custa cada peça e quanto cobrar. A calculadora faz as contas sozinha.</p><div class="val">De <s data-v="b2"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus03.webp" alt=""><div><h3>3 · Calendário religioso de vendas</h3><p>As datas do ano inteiro no Brasil, para preparar os seus terços a tempo.</p><div class="val">De <s data-v="b3"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus04.webp" alt=""><div><h3>4 · Encomendas para Primeira Comunhão e Batizado</h3><p>Lembrancinhas por dúzia: quanto comprar, como fazer rápido e como fazer o orçamento.</p><div class="val">De <s data-v="b4"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus05.webp" alt=""><div><h3>5 · Significado das cores</h3><p>O que cada cor transmite e paletas que sempre ficam bonitas.</p><div class="val">De <s data-v="b5"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus06.webp" alt=""><div><h3>6 · Catálogo pronto para o WhatsApp</h3><p>Modelo editável para colocar as suas fotos e os seus preços, mais um exemplo pronto.</p><div class="val">De <s data-v="b6"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus07.webp" alt=""><div><h3>7 · Plano de 7 dias para vender nas redes</h3><p>O que postar em cada dia para conseguir as suas primeiras vendas.</p><div class="val">De <s data-v="b7"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus08.webp" alt=""><div><h3>8 · Embalagens, kits e etiquetas</h3><p>Como apresentar para que pareçam presente, com etiquetas para imprimir e editáveis.</p><div class="val">De <s data-v="b8"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus09.webp" alt="Bônus 9: As videoaulas"><div><h3>9 · As videoaulas</h3><p>4 aulas passo a passo, só as mãos, para você ver cada movimento de perto.</p><div class="val">De <s data-v="b9"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus10.webp" alt=""><div><h3>10 · Guia para tirar fotos que vendem</h3><p>Como fotografar os seus terços sem equipamento, para que pareçam profissionais.</p><div class="val">De <s data-v="b10"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus11.webp" alt="Bônus 11: Onde encontrar os materiais"><div><h3>11 · Onde encontrar os materiais</h3><p>Onde comprar cada item, o que pedir na loja e como economizar comprando em quantidade.</p><div class="val">De <s data-v="b11"></s> por:<span class="gratis">GRÁTIS</span></div></div></div>
-  <div class="totbon">Valor de todos os bônus: <s data-v="bonus"></s><b>HOJE: GRÁTIS</b></div>
-  <div class="cta"><a class="btn" href="#oferta">Quero os meus bônus! →</a></div>
+  <h2>E in più, <em>11 bonus in regalo</em></h2>
+  <p class="lead">Il manuale ti insegna a farli. I bonus ti aiutano con tutto il resto: <b>quanto chiedere, quando, a chi e come presentarli</b>. Solo se acquisti oggi:</p>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus01.webp" alt="Bonus 1: Guida per vendere + messaggi pronti"><div><h3>1 · Guida per vendere + messaggi pronti</h3><p>Dove vendere (parrocchia, catechismo, negozi, mercatini, WhatsApp, Instagram, Etsy) e 8 messaggi pronti da copiare.</p><div class="val">Valore <s data-v="b1"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus02.webp" alt="Bonus 2: Prezzi + Calcolatrice"><div><h3>2 · Prezzi + Calcolatrice</h3><p>Quanto ti costa ogni pezzo e quanto chiedere. La calcolatrice in euro fa i conti da sola.</p><div class="val">Valore <s data-v="b2"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus03.webp" alt="Bonus 3: Calendario religioso"><div><h3>3 · Calendario religioso</h3><p>Le feste italiane di tutto l'anno, da Pasqua a Natale, passando per Pompei, Santa Rita e Padre Pio, con il giorno in cui iniziare a preparare.</p><div class="val">Valore <s data-v="b3"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus04.webp" alt="Bonus 4: Prima Comunione e Battesimo"><div><h3>4 · Prima Comunione e Battesimo</h3><p>Bomboniere in serie: quanto comprare, come farle in fretta e il preventivo pronto da mandare.</p><div class="val">Valore <s data-v="b4"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus05.webp" alt="Bonus 5: Il significato dei colori"><div><h3>5 · Il significato dei colori</h3><p>Cosa trasmette ogni colore e 8 palette che stanno sempre bene.</p><div class="val">Valore <s data-v="b5"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus06.webp" alt="Bonus 6: Catalogo per WhatsApp"><div><h3>6 · Catalogo per WhatsApp</h3><p>Metti le tue foto e i tuoi prezzi e scarica il catalogo pronto da inviare, più un esempio già fatto.</p><div class="val">Valore <s data-v="b6"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus07.webp" alt="Bonus 7: Piano di 7 giorni"><div><h3>7 · Piano di 7 giorni</h3><p>Cosa pubblicare ogni giorno sui social, con il testo pronto, per arrivare alle prime vendite.</p><div class="val">Valore <s data-v="b7"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus08.webp" alt="Bonus 8: Confezioni ed etichette"><div><h3>8 · Confezioni ed etichette</h3><p>Idee per presentarli come un regalo, etichette da stampare o modificare e bigliettini con le preghiere.</p><div class="val">Valore <s data-v="b8"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus09.webp" alt="Bonus 9: Le videolezioni"><div><h3>9 · Le videolezioni</h3><p>4 lezioni passo passo, solo le mani, per vedere ogni movimento da vicino.</p><div class="val">Valore <s data-v="b9"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus10.webp" alt="Bonus 10: Foto che vendono"><div><h3>10 · Foto che vendono</h3><p>Come fotografare i tuoi rosari con il telefono, senza attrezzatura, perché sembrino professionali.</p><div class="val">Valore <s data-v="b10"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="bonus rev"><img width="390" height="520" loading="lazy" decoding="async" src="img/bonus11.webp" alt="Bonus 11: Dove trovare i materiali"><div><h3>11 · Dove trovare i materiali</h3><p>Dove comprare ogni cosa, cosa chiedere in negozio e come risparmiare comprando in quantità.</p><div class="val">Valore <s data-v="b11"></s><span class="gratis">GRATIS</span></div></div></div>
+  <div class="totbon">Valore di tutti i bonus: <s data-v="bonus"></s><b>OGGI: GRATIS</b></div>
+  <div class="cta"><a class="btn" href="#oferta">Voglio i miei bonus! →</a></div>
 
  </div>
 </section>
@@ -365,42 +374,42 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <!-- 5c. POR QUE COMECAR AGORA (estilo Lume) -->
 <section class="lume agora">
  <div class="wrap">
-  <p class="eyebrow">Por que começar agora</p>
-  <h2>Você viu o que dá pra fazer. <em>Agora é a sua vez.</em></h2>
-  <p class="asub">E o melhor momento pra começar é agora, porque vem aí a época em que mais se dá terço de presente.</p>
+  <p class="eyebrow">Perché iniziare adesso</p>
+  <h2>Hai visto cosa puoi fare. <em>Ora tocca a te.</em></h2>
+  <p class="asub">E il momento migliore è proprio adesso, perché sta arrivando il periodo dell'anno in cui si regalano più rosari.</p>
   <div class="agrid">
-   <div class="ag rev"><span>🎁</span><b>O Natal está chegando</b><p>Terço é um dos presentes mais especiais do fim de ano. Quem começa agora chega em dezembro com peças prontas. <strong id="natalDias" class="ndias"></strong></p></div>
-   <div class="ag rev"><span>⛪</span><b>E depois vende o ano inteiro</b><p>Batizados, primeira comunhão, crisma, casamentos e lembrancinhas. Sempre tem procura.</p></div>
-   <div class="ag rev"><span>⏳</span><b>Cada mês esperando é um mês sem vender</b><p>Daqui a um ano, você quer estar com clientes ou ainda pensando em começar?</p></div>
+   <div class="ag rev"><span>🎁</span><b>Natale si avvicina</b><p>Il rosario è uno dei regali più sentiti di fine anno. Chi inizia ora arriva a dicembre con i pezzi già pronti. <strong id="natalDias" class="ndias"></strong></p></div>
+   <div class="ag rev"><span>⛪</span><b>E poi vendi tutto l'anno</b><p>Battesimi, Prime Comunioni, Cresime, matrimoni e bomboniere. La richiesta non manca mai.</p></div>
+   <div class="ag rev"><span>⏳</span><b>Ogni mese di attesa è un mese senza vendere</b><p>Tra un anno vuoi avere già le tue clienti o essere ancora qui a pensarci?</p></div>
   </div>
-  <p class="aturn">Daqui a 7 dias, você pode estar com o seu primeiro terço pronto na mão. <em>Ou ainda pensando se consegue.</em></p>
-  <a class="btn" href="#oferta">Quero começar agora →</a>
+  <p class="aturn">Tra 7 giorni puoi avere il tuo primo rosario finito tra le mani. <em>Oppure essere ancora qui a chiederti se ce la fai.</em></p>
+  <a class="btn" href="#oferta">Voglio iniziare adesso →</a>
  </div>
 </section>
 
 <!-- 6. OFERTA -->
 <section class="alt" id="oferta">
  <div class="wrap">
-  <h2>Tudo isso é seu <em>hoje</em></h2>
-  <p class="lead">O guia completo e os 11 bônus, em um só pagamento.</p>
+  <h2>Tutto questo è tuo <em>oggi</em></h2>
+  <p class="lead">Il manuale completo e gli 11 bonus, con un solo pagamento.</p>
   <div class="oferta">
-   <div class="ribbon">⭐ ACESSO COMPLETO · TUDO INCLUÍDO</div>
-   <img width="900" height="1125" loading="lazy" decoding="async" class="ofimg" src="img/oferta-final.webp" alt="O manual com +100 modelos de terços artesanais e as capas dos 11 bônus">
+   <div class="ribbon">⭐ ACCESSO COMPLETO · TUTTO INCLUSO</div>
+   <img width="900" height="1125" loading="lazy" decoding="async" class="ofimg" src="img/oferta-final.webp" alt="Il manuale con +100 modelli di rosari fatti a mano e le copertine degli 11 bonus">
    <ul>
-    <li><span><b>+100 modelos</b> passo a passo</span></li>
-    <li><span><b>4 técnicas base</b> com desenhos</span></li>
-    <li><span><b>Materiais</b> e quantidades de cada modelo</span></li>
-    <li><span><b>Como vender:</b> preços, datas e o que dizer</span></li>
-    <li><span><b>11 bônus</b> de presente</span></li>
-    <li><span><b>Acesso imediato</b> e vitalício</span></li>
-    <li><span><b>Garantia</b> de 7 dias</span></li>
+    <li><span><b>+100 modelli</b> passo passo</span></li>
+    <li><span><b>Il cammino del rosario</b> disegnato grano per grano in ogni modello</span></li>
+    <li><span><b>Materiali</b> e quantità di ogni modello</span></li>
+    <li><span><b>Come vendere:</b> prezzi, date e cosa scrivere</span></li>
+    <li><span><b>11 bonus</b> in regalo</span></li>
+    <li><span><b>Accesso immediato</b> e per sempre</span></li>
+    <li><span><b>Garanzia</b> di 7 giorni</span></li>
    </ul>
-   <p class="total">O guia: <s data-v="tachado"></s></p><p class="total" style="margin-top:2px">Os 11 bônus: <s data-v="bonus"></s> <b style="color:var(--verde2)">GRÁTIS</b></p><p class="total" style="margin-top:2px">Hoje, tudo por apenas:</p>
+   <p class="total">Il manuale: <s data-v="tachado"></s></p><p class="total" style="margin-top:2px">Gli 11 bonus: <s data-v="bonus"></s> <b style="color:var(--verde2)">GRATIS</b></p><p class="total" style="margin-top:2px">Oggi, tutto a soli:</p>
    <div class="precio" data-v="preco"></div>
-   <p class="unico">pagamento único · sem mensalidade</p>
-   <div class="ahorro">Você economiza <span data-v="ahorro"></span></div>
-   <a class="btn checkout" href="#oferta">Quero o meu Ateliê do Terço →<small>Acesso imediato no seu e-mail</small></a>
-   <div class="sellos"><div><i>🔒</i>Compra segura</div><div><i>✅</i>Satisfação garantida</div><div><i>🛡️</i>Dados protegidos</div></div>
+   <p class="unico">pagamento unico · nessun abbonamento</p>
+   <div class="ahorro">Risparmi <span data-v="ahorro"></span></div>
+   <a class="btn checkout" href="#oferta">Sì, voglio il mio Atelier →<small>Accesso immediato via e-mail</small></a>
+   <div class="sellos"><div><i>🔒</i>Acquisto sicuro</div><div><i>✅</i>Soddisfatta o rimborsata</div><div><i>🛡️</i>Dati protetti</div></div>
   </div>
  </div>
 </section>
@@ -408,47 +417,47 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
 <!-- 7. GARANTIA -->
 <section>
  <div class="wrap">
-  <div class="gar rev"><img width="228" height="184" loading="lazy" decoding="async" class="sello-img" src="img/garantia-7.webp" alt="Garantia de 7 dias">
-   <div><h3 style="font-size:20px;font-weight:800;color:var(--marino);margin-bottom:4px">E se não te convencer, você não perde nada</h3><p style="font-size:15.5px">Você tem 7 dias para testar. Se não for o que esperava, é só escrever pra gente e devolvemos 100% do seu dinheiro.</p></div></div>
+  <div class="gar rev"><svg class="sello-img" viewBox="0 0 220 220" role="img" aria-label="Garanzia di 7 giorni"><defs><radialGradient id="g7o" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#F7E3A8"/><stop offset=".6" stop-color="#D9A93F"/><stop offset="1" stop-color="#9C7424"/></radialGradient><path id="g7a" d="M38 110a72 72 0 0 1 144 0"/><path id="g7b" d="M30 110a80 80 0 0 0 160 0"/></defs><circle cx="110" cy="110" r="106" fill="url(#g7o)"/><circle cx="110" cy="110" r="92" fill="none" stroke="#FFF4D2" stroke-width="2" stroke-dasharray="2 5"/><circle cx="110" cy="110" r="58" fill="#1F3A2C"/><text font-family="Outfit,Arial,sans-serif" font-weight="800" font-size="19" letter-spacing="3" fill="#3B2A0C"><textPath href="#g7a" startOffset="50%" text-anchor="middle">GARANZIA</textPath></text><text font-family="Outfit,Arial,sans-serif" font-weight="800" font-size="17" letter-spacing="3" fill="#3B2A0C"><textPath href="#g7b" startOffset="50%" text-anchor="middle">RIMBORSO 100%</textPath></text><text x="110" y="122" text-anchor="middle" font-family="'DM Serif Display',Georgia,serif" font-size="60" fill="#F7E3A8">7</text><text x="110" y="148" text-anchor="middle" font-family="Outfit,Arial,sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#F7E3A8">GIORNI</text></svg>
+   <div><h3 style="font-size:20px;font-weight:800;color:var(--marino);margin-bottom:4px">E se non ti convince, non perdi niente</h3><p style="font-size:15.5px">Hai 7 giorni per provarlo. Se non è quello che ti aspettavi, scrivici e ti rimborsiamo il 100% di quello che hai pagato.</p></div></div>
  </div>
 </section>
 
 <!-- 8. FAQ -->
 <section class="alt">
  <div class="wrap">
-  <h2>Ficou com <em>alguma dúvida?</em></h2>
-  <details><summary>Preciso ter experiência com artesanato?</summary><div class="in">Não. O guia começa do zero: o que comprar, como usar cada alicate e o seu primeiro terço passo a passo.</div></details>
-  <details><summary>É só para vender ou também para mim?</summary><div class="in">Para as duas coisas. Você pode fazer os seus próprios terços, presentear a família, preparar as lembrancinhas de uma Primeira Comunhão ou Batizado, ou rezar com algo feito pelas próprias mãos. Vender é uma opção, não uma obrigação.</div></details>
-  <details><summary>É pagamento único ou mensalidade?</summary><div class="in">Pagamento único. Sem mensalidade nem cobrança escondida.</div></details>
-  <details><summary>De que materiais eu preciso? São caros?</summary><div class="in">Contas, arame ou fio, uma medalha e uma cruz, de qualquer armarinho ou loja de bijuteria. Para começar bastam 3 alicates básicos. E se você ainda não tem alicate, a técnica 4 se faz só com tesoura.</div></details>
-  <details><summary>Como eu recebo?</summary><div class="in">Assim que você paga, chega um e-mail com o link da sua pasta. Você abre no celular ou no computador, sem instalar nada.</div></details>
-  <details><summary>É um livro físico?</summary><div class="in">Não. É um guia digital em PDF, todo colorido. Você pode ler no celular ou imprimir.</div></details>
-  <details><summary>Serve para a minha região?</summary><div class="in">Sim. Ele traz as devoções mais queridas do Brasil, e a calculadora funciona em reais.</div></details>
-  <details><summary>Vou conseguir vender?</summary><div class="in">O guia te dá o passo a passo, os modelos mais pedidos em cada data e mensagens prontas para oferecer. Vender depende de você fazer e mostrar; os bônus dizem como e para quem.</div></details>
-  <details><summary>Preciso ter Instagram?</summary><div class="in">Não. Você pode vender na sua paróquia, para a sua família e pelo WhatsApp.</div></details>
-  <details><summary>Tem vídeos?</summary><div class="in">Sim: além das fotos do passo a passo em cada modelo, o bônus 9 traz 4 videoaulas para ver cada movimento de perto.</div></details>
-  <details><summary>E se eu não gostar?</summary><div class="in">Você tem 7 dias de garantia: devolvemos o seu dinheiro.</div></details>
+  <h2>Hai <em>qualche dubbio?</em></h2>
+  <details><summary>Serve esperienza con i lavori manuali?</summary><div class="in">No. Il manuale parte da zero: cosa comprare, come chiudere gli schiaccini con la pinza a becchi piatti e il tuo primo rosario passo passo.</div></details>
+  <details><summary>Serve solo per vendere o anche per me?</summary><div class="in">Per tutte e due le cose. Puoi fare i tuoi rosari, regalarli in famiglia, preparare le bomboniere di una Prima Comunione o di un Battesimo, o pregare con qualcosa fatto con le tue mani. Vendere è una possibilità, non un obbligo.</div></details>
+  <details><summary>È un pagamento unico o un abbonamento?</summary><div class="in">Pagamento unico. Nessun abbonamento e nessun costo nascosto.</div></details>
+  <details><summary>Di quali materiali ho bisogno? Costano tanto?</summary><div class="in">Grani, filo di nylon, schiaccini, una crociera e una croce, che trovi in merceria o nei negozi di perline. L'attrezzo base è una pinza a becchi piatti. Oltre al rosario con nylon e schiaccini, il manuale insegna la decina, il bracciale con l'elastico e i nodi su cordoncino. Nel bonus 11 trovi dove comprare tutto.</div></details>
+  <details><summary>Come lo ricevo?</summary><div class="in">Appena completi il pagamento, ricevi subito via e-mail l'accesso alla tua area riservata, con il manuale in PDF, i bonus e le videolezioni. La apri dal telefono o dal computer, senza installare niente.</div></details>
+  <details><summary>È un libro cartaceo?</summary><div class="in">No. È un manuale digitale in PDF, tutto a colori. Puoi leggerlo sul telefono o stamparlo.</div></details>
+  <details><summary>Va bene per l'Italia?</summary><div class="in">Sì. È scritto in italiano, il calendario segue le feste italiane e la calcolatrice lavora in euro.</div></details>
+  <details><summary>Riuscirò a vendere?</summary><div class="in">Il manuale ti dà il passo passo, i modelli più richiesti in ogni periodo e i messaggi pronti per proporli. Vendere dipende da te, da quanto fai e da quanto mostri; i bonus ti dicono come e a chi.</div></details>
+  <details><summary>Devo avere Instagram?</summary><div class="in">No. Puoi vendere in parrocchia, ai mercatini, in famiglia e su WhatsApp.</div></details>
+  <details><summary>Ci sono video?</summary><div class="in">Sì: oltre alle foto del passo passo in ogni modello, il bonus 9 ti dà 4 videolezioni per vedere ogni movimento da vicino.</div></details>
+  <details><summary>E se non mi piace?</summary><div class="in">Hai 7 giorni di garanzia: ti restituiamo i soldi.</div></details>
  </div>
 </section>
 
 <!-- 9. FECHAMENTO -->
 <section class="final">
  <div class="wrap">
-  <h2>A hora de começar <em>é agora</em></h2>
-  <p style="margin-bottom:22px">Faça o seu primeiro terço artesanal em uma única tarde e comece a vender ainda esta semana, com +100 modelos passo a passo e os 11 bônus.</p>
-  <a class="btn checkout" href="#oferta">Quero o acesso completo agora →<small><span data-v="preco"></span> · pagamento único</small></a>
+  <h2>Il momento di iniziare <em>è adesso</em></h2>
+  <p style="margin-bottom:22px">Fai il tuo primo rosario in un solo pomeriggio e inizia a venderlo già questa settimana, con +100 modelli passo passo e gli 11 bonus.</p>
+  <a class="btn checkout" href="#oferta">Voglio l'accesso completo adesso →<small><span data-v="preco"></span> · pagamento unico</small></a>
  </div>
 </section>
 
-<footer>© O Ateliê do Terço · Todos os direitos reservados<br>Produto digital, entregue por e-mail.<br></footer>
+<footer>© L'Atelier del Rosario · Tutti i diritti riservati<br>Prodotto digitale, consegnato via e-mail.<br></footer>
 
 <script>
 (function(){
  /* ---- Precos e checkout: tudo aqui. Valores provisorios, a definir. ---- */
  var CHECKOUT = 'https://pay.hotmart.com/E108285930F?off=re6ktr4k&checkoutMode=10';  /* link do checkout; vazio = botao rola ate a oferta */
- var BACK = 'https://pay.hotmart.com/E108285930F?off=iqmdd5bz&checkoutMode=10';  /* back redirect: oferta de R$ 5,90 para quem tenta voltar */
- var T = {p:27.90, tachado:97, b:[37,27,27,27,17,27,27,27,37,17,37]};
- function f(n){return 'R$ '+n.toLocaleString('pt-BR',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})}
+ var BACK = 'https://pay.hotmart.com/E108285930F?off=iqmdd5bz&checkoutMode=10';  /* back redirect: oferta de saida para quem tenta voltar (preco na Hotmart) */
+ var T = {p:9.90, tachado:47, b:[14,9,9,9,7,9,9,9,14,7,14]};  /* euro */
+ function f(n){return n.toLocaleString('it-IT',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2})+' €'}
  var bon=T.b.reduce(function(a,c){return a+c},0);
  var v={preco:f(T.p),tachado:f(T.tachado),ahorro:f(Math.round((T.tachado-T.p)*100)/100),bonus:f(bon)};
  T.b.forEach(function(x,i){v['b'+(i+1)]=f(x)});
@@ -477,9 +486,12 @@ footer{color:var(--l-ink-soft);font-size:12.5px}
   [['hh',h],['mm',m],['ss',s]].forEach(function(x){document.getElementById(x[0]).textContent=p2(x[1])});
  }
  setInterval(tic,1000);tic();
+ /* espacador com a altura real da faixa fixa (muda se o texto quebrar em 2 linhas) */
+ function esp(){document.getElementById("cuentaEsp").style.height=document.getElementById("cuenta").offsetHeight+"px"}
+ esp();addEventListener("resize",esp);addEventListener("load",esp);
 
  /* ---- Contagem ate o Natal ---- */
- var nd=document.getElementById("natalDias");if(nd){var n=new Date(),x=new Date(n.getFullYear(),11,25);if(n>x)x=new Date(n.getFullYear()+1,11,25);var d=Math.ceil((x-n)/864e5);if(d>1&&d<=120)nd.textContent="⏳ Faltam "+d+" dias pro Natal";else if(d===1)nd.textContent="⏳ Falta 1 dia pro Natal"}
+ var nd=document.getElementById("natalDias");if(nd){var n=new Date(),x=new Date(n.getFullYear(),11,25);if(n>x)x=new Date(n.getFullYear()+1,11,25);var d=Math.ceil((x-n)/864e5);if(d>1&&d<=120)nd.textContent="⏳ Mancano "+d+" giorni a Natale";else if(d===1)nd.textContent="⏳ Manca 1 giorno a Natale"}
  /* ---- Carrosseis continuos: duplica a pista para nao ter corte ---- */
  var pista=document.getElementById('pista');pista.innerHTML+=pista.innerHTML;
  var pista2=document.getElementById('pista2');pista2.innerHTML+=pista2.innerHTML;
