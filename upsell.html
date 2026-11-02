@@ -13,6 +13,14 @@
 <meta name="theme-color" content="#8C3A5C">
 <link rel="preload" as="font" type="font/woff2" href="fonts/outfit-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/dmserifdisplay-latin.woff2" crossorigin>
+<!-- VSL (VTurb): marca o início do carregamento e pede o player e a lib antes do resto da página -->
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae8bb9ea02a8f878e26da61/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
 <style>
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/dmserifdisplay-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
 @font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/dmserifdisplay-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -49,12 +57,8 @@ img{display:block;max-width:100%;height:auto}
 .topo h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:32px;line-height:1.1;margin:0;text-wrap:balance}
 .topo h1 em{font-style:italic;color:var(--wine)}
 .topo p{margin:10px auto 0;max-width:340px;font-size:17px;line-height:1.4;color:var(--ink-soft)}
-/* palco 9:16 da VSL. Enquanto o vídeo não chega, mostra um quadro escuro com o play.
-   >>> QUANDO A VSL ESTIVER PRONTA: trocar o .vsl-espera pelo player e ajustar ESPERA lá embaixo. */
+/* palco 9:16 da VSL. Quem manda na largura é este contêiner: o player do VTurb reescreve o style do próprio elemento. */
 .palco-vsl{width:72%;max-width:330px;margin:18px auto 0;border-radius:16px;overflow:hidden;line-height:0;box-shadow:0 12px 30px rgba(43,16,34,.2);background:#1b0f16}
-.vsl-espera{position:relative;width:100%;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center}
-.vsl-espera span{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.35)}
-.vsl-espera svg{width:26px;height:26px;margin-left:4px;fill:var(--wine-esc)}
 
 /* ══════════ o que aparece depois do tempo de vídeo ══════════
    display:none e não opacity:0: com o bloco invisível ocupando lugar, a página abre com um vão enorme. */
@@ -109,8 +113,7 @@ img{display:block;max-width:100%;height:auto}
 </header>
 
 <div class="palco-vsl">
- <!-- VSL: entra aqui quando estiver pronta -->
- <div class="vsl-espera" aria-label="Video"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg></span></div>
+ <vturb-smartplayer id="vid-6ae8bb9ea02a8f878e26da61" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 177.77777777777777% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
 </div>
 
 <!-- ═════════ oferta e garantia: entram depois do tempo de vídeo (ESPERA) ═════════ -->
@@ -142,6 +145,9 @@ img{display:block;max-width:100%;height:auto}
  <p class="rodape">Questa offerta compare una sola volta, adesso.<br>© L'Atelier del Rosario · Tutti i diritti riservati</p>
 </div>
 
+<!-- player da VSL -->
+<script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/59fb2471-bbf9-48ae-ad59-009b3aba8bd1/players/6ae8bb9ea02a8f878e26da61/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+
 <!-- HOTMART - Sales Funnel Widget. O mount roda quando o bloco da oferta aparece (abrirOferta, lá embaixo):
      montado dentro de um display:none, o widget pode nascer com altura zero. -->
 <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
@@ -166,9 +172,9 @@ function montarWidget(){if(widgetMontado)return;widgetMontado=true;checkoutEleme
 })();
 
 /* ATRASO — preço e botão entram só depois que a VSL chega na oferta. O instante fica na sessão: quem recarrega
-   não espera tudo de novo. >>> ESPERA = 0 enquanto a VSL não está na página; com o vídeo, pôr o minuto da oferta. */
+   não espera tudo de novo. A VSL tem 2:05; aos 1:50 ela já está no fecho ("10 tipi di rosario nuovi da fare e vendere"). */
 (function(){
- var ESPERA=0,bloco=document.getElementById('depois'),liberaEm;
+ var ESPERA=110000,bloco=document.getElementById('depois'),liberaEm;
  try{liberaEm=parseInt(sessionStorage.getItem('ups-libera')||'0',10);if(!liberaEm){liberaEm=Date.now()+ESPERA;sessionStorage.setItem('ups-libera',String(liberaEm))}}catch(e){liberaEm=Date.now()+ESPERA}
  setTimeout(function(){bloco.classList.add('on');montarWidget()},Math.max(0,liberaEm-Date.now()));
 })();
